@@ -1,0 +1,14 @@
+time klee --libc=uclibc --posix-runtime --emit-all-errors --only-output-states-covering-new implementation.bc > output 2>&1
+klee --libc=uclibc --posix-runtime --emit-all-errors  implementation.bc >  2>  323.00s user 1.12s system 99% cpu 5:25.32 total
+
+KLEE: NOTE: Using POSIX model: /home/flandini/klee/build/Debug+Asserts/lib/libkleeRuntimePOSIX.bca
+KLEE: NOTE: Using klee-uclibc : /home/flandini/klee/build/Debug+Asserts/lib/klee-uclibc.bca
+KLEE: output directory is "redacted"
+KLEE: Using STP solver backend
+KLEE: WARNING ONCE: calling external: syscall(16, 0, 21505, 94241864875568) at /home/flandini/klee/runtime/POSIX/fd.c:991 10
+KLEE: WARNING ONCE: calling __user_main with extra arguments.
+KLEE: WARNING ONCE: Alignment of memory from call "malloc" is not modelled. Using alignment of 8.
+
+KLEE: done: total instructions = 74146631
+KLEE: done: completed paths = 58395
+KLEE: done: generated tests = 8
